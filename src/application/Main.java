@@ -3,6 +3,8 @@ import model.dao.DaoFactory;
 import model.dao.SellerDao;
 import model.entities.Department;
 import model.entities.Seller;
+
+import java.util.Collections;
 import java.util.List;
 
 public class Main {
@@ -15,7 +17,11 @@ public class Main {
 
         System.out.println("\n=== TEST 2: seller findByDepartment ===");
         Department department = new Department(2, null);
-        List<Seller> seller2 = sellerDao.findByDepartment(department);
-        System.out.println(seller2);
+        List<Seller> list = sellerDao.findByDepartment(department);
+        System.out.println(list);
+
+        System.out.println("\n=== TEST 3: seller findAll ===");
+        list = sellerDao.findAll();
+        System.out.println(list);
     }
 }
